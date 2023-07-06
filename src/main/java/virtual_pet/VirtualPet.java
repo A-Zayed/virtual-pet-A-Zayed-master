@@ -1,8 +1,8 @@
 package virtual_pet;
+
 import java.util.Random;
 import java.util.Scanner;
 
- 
 public class VirtualPet {
     private String name;
     private int hunger;
@@ -40,5 +40,4 @@ public class VirtualPet {
         System.out.println(name + " is having fun!");
     }
 
-    
 }
