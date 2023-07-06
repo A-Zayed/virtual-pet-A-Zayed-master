@@ -39,4 +39,6 @@ public class VirtualPet {
         }
         System.out.println(name + " is having fun!");
     }
+
+    
 }
