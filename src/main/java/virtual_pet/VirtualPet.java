@@ -37,7 +37,7 @@ public class VirtualPet {
         if (energy < 0) {
             energy = 0;
         }
-        System.out.println(name + " is having fun!");
+        System.out.println(name + " is having a great time!");
     }
 
     public void sleep() {
