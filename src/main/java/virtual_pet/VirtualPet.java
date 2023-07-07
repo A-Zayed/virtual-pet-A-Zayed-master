@@ -39,7 +39,7 @@ public class VirtualPet {
         }
         System.out.println(name + " is having fun!");
     }
-    
+
     public void sleep() {
         energy = 100;
         hunger += 10;
@@ -62,6 +62,7 @@ public class VirtualPet {
         System.out.println("Happiness: " + happiness);
         System.out.println("Energy: " + energy);
     }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -72,7 +73,7 @@ public class VirtualPet {
         VirtualPet virtualPet = new VirtualPet(petName);
 
         System.out.println("Commands: feed, play, sleep, status, quit");
-        
+
         String command;
         do {
             virtualPet.tick();
@@ -98,4 +99,3 @@ public class VirtualPet {
         scanner.close();
     }
 }
-
