@@ -62,5 +62,40 @@ public class VirtualPet {
         System.out.println("Happiness: " + happiness);
         System.out.println("Energy: " + energy);
     }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.println("Welcome to Virtual Pet!");
+        System.out.print("Enter a name for your pet: ");
+        String petName = scanner.nextLine();
+
+        VirtualPet virtualPet = new VirtualPet(petName);
+
+        System.out.println("Commands: feed, play, sleep, status, quit");
+        
+        String command;
+        do {
+            virtualPet.tick();
+
+            System.out.print("\nEnter a command: ");
+            command = scanner.nextLine();
+
+            if (command.equals("feed")) {
+                virtualPet.feed();
+            } else if (command.equals("play")) {
+                virtualPet.play();
+            } else if (command.equals("sleep")) {
+                virtualPet.sleep();
+            } else if (command.equals("status")) {
+                virtualPet.checkStatus();
+            } else if (command.equals("quit")) {
+                System.out.println("Goodbye!");
+            } else {
+                System.out.println("Invalid command. Try again.");
+            }
+        } while (!command.equals("quit"));
+
+        scanner.close();
+    }
 }
+
