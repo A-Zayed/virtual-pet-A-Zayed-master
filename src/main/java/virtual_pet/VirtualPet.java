@@ -39,5 +39,28 @@ public class VirtualPet {
         }
         System.out.println(name + " is having fun!");
     }
+    
+    public void sleep() {
+        energy = 100;
+        hunger += 10;
+        if (hunger > 100) {
+            hunger = 100;
+        }
+        System.out.println(name + " is well-rested!");
+    }
+
+    public void tick() {
+        Random random = new Random();
+        hunger += random.nextInt(10) + 1;
+        happiness -= random.nextInt(5) + 1;
+        energy -= random.nextInt(5) + 1;
+    }
+
+    public void checkStatus() {
+        System.out.println("Name: " + name);
+        System.out.println("Hunger: " + hunger);
+        System.out.println("Happiness: " + happiness);
+        System.out.println("Energy: " + energy);
+    }
 
 }
