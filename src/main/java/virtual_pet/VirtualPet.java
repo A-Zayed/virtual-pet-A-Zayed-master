@@ -1,126 +1,120 @@
-<<<<<<< HEAD:src/main/java/virtual_pet/VirtualPetApplication.java
-package virtual_pet;
 
-import java.util.Random;
-import java.util.Scanner;
+// package virtual_pet;
 
-public class VirtualPetApplication {
-    private String name;
-    private int hunger;
-    private int happiness;
-    private int energy;
+// import java.util.Random;
+// import java.util.Scanner;
 
-    public VirtualPetApplication(String name) {
-        this.name = name;
-        hunger = 0;
-        happiness = 0;
-        energy = 100;
-    }
+// public class VirtualPetApplication {
+//     private String name;
+//     private int hunger;
+//     private int happiness;
+//     private int energy;
 
-    public void feed() {
-        hunger -= 10;
-        if (hunger < 0) {
-            hunger = 0;
-        }
-        happiness += 5;
-        if (happiness > 100) {
-            happiness = 100;
-        }
-        System.out.println("Tasty! " + name + " is happy!");
-    }
+//     public VirtualPetApplication(String name) {
+//         this.name = name;
+//         hunger = 0;
+//         happiness = 0;
+//         energy = 100;
+//     }
 
-    public void play() {
-        happiness += 10;
-        if (happiness > 100) {
-            happiness = 100;
-        }
-        energy -= 20;
-        if (energy < 0) {
-            energy = 0;
-        }
-        System.out.println(name + " is having a great time!");
-    }
+//     public void feed() {
+//         hunger -= 10;
+//         if (hunger < 0) {
+//             hunger = 0;
+//         }
+//         happiness += 5;
+//         if (happiness > 100) {
+//             happiness = 100;
+//         }
+//         System.out.println("Tasty! " + name + " is happy!");
+//     }
 
-    public void sleep() {
-        energy = 100;
-        hunger += 10;
-        if (hunger > 100) {
-            hunger = 100;
-        }
-        System.out.println(name + " is well-rested!");
-    }
+//     public void play() {
+//         happiness += 10;
+//         if (happiness > 100) {
+//             happiness = 100;
+//         }
+//         energy -= 20;
+//         if (energy < 0) {
+//             energy = 0;
+//         }
+//         System.out.println(name + " is having a great time!");
+//     }
 
-    public void tick() {
-        Random random = new Random();
-        hunger += random.nextInt(10) + 1;
-        happiness -= random.nextInt(5) + 1;
-        energy -= random.nextInt(5) + 1;
-    }
+//     public void sleep() {
+//         energy = 100;
+//         hunger += 10;
+//         if (hunger > 100) {
+//             hunger = 100;
+//         }
+//         System.out.println(name + " is well-rested!");
+//     }
 
-    public void checkStatus() {
-        System.out.println("Name: " + name);
-        System.out.println("Hunger: " + hunger);
-        System.out.println("Happiness: " + happiness);
-        System.out.println("Energy: " + energy);
-    }
+//     public void tick() {
+//         Random random = new Random();
+//         hunger += random.nextInt(10) + 1;
+//         happiness -= random.nextInt(5) + 1;
+//         energy -= random.nextInt(5) + 1;
+//     }
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+//     public void checkStatus() {
+//         System.out.println("Name: " + name);
+//         System.out.println("Hunger: " + hunger);
+//         System.out.println("Happiness: " + happiness);
+//         System.out.println("Energy: " + energy);
+//     }
 
-        System.out.println("Welcome to Virtual Pet!");
-        System.out.print("Enter a name for your pet: ");
-        String petName = scanner.nextLine();
+//     public static void main(String[] args) {
+//         Scanner scanner = new Scanner(System.in);
 
-        VirtualPetApplication virtualPet = new VirtualPetApplication(petName);
+//         System.out.println("Welcome to Virtual Pet!");
+//         System.out.print("Enter a name for your pet: ");
+//         String petName = scanner.nextLine();
 
-        System.out.println("Commands: feed, play, sleep, status, quit");
+//         VirtualPetApplication virtualPet = new VirtualPetApplication(petName);
 
-        String command;
-        do {
-            virtualPet.tick();
+//         System.out.println("Commands: feed, play, sleep, status, quit");
 
-            System.out.print("\nEnter a command: ");
-            command = scanner.nextLine();
+//         String command;
+//         do {
+//             virtualPet.tick();
 
-            if (command.equals("feed")) {
-                virtualPet.feed();
-            } else if (command.equals("play")) {
-                virtualPet.play();
-            } else if (command.equals("sleep")) {
-                virtualPet.sleep();
-            } else if (command.equals("status")) {
-                virtualPet.checkStatus();
-            } else if (command.equals("quit")) {
-                System.out.println("Goodbye!");
-            } else {
-                System.out.println("Invalid command. Try again.");
-            }
-        } while (!command.equals("quit"));
+//             System.out.print("\nEnter a command: ");
+//             command = scanner.nextLine();
 
-        scanner.close();
-    }
-}
-=======
-<<<<<<< HEAD
-package virtual_pet;
+//             if (command.equals("feed")) {
+//                 virtualPet.feed();
+//             } else if (command.equals("play")) {
+//                 virtualPet.play();
+//             } else if (command.equals("sleep")) {
+//                 virtualPet.sleep();
+//             } else if (command.equals("status")) {
+//                 virtualPet.checkStatus();
+//             } else if (command.equals("quit")) {
+//                 System.out.println("Goodbye!");
+//             } else {
+//                 System.out.println("Invalid command. Try again.");
+//             }
+//         } while (!command.equals("quit"));
 
-public class VirtualPet {
-    public static void main(String[] args) {
-        VirtualPet pet = new VirtualPet("name");
-        pet.feed();
-        pet.play();
+//         scanner.close();
+//     }
+// package virtual_pet;
 
-    }
-=======
-package virtual_pet;
+// public class VirtualPet {
+//     public static void main(String[] args) {
+//         VirtualPet pet = new VirtualPet("name");
+//         pet.feed();
+//         pet.play();
 
-public class VirtualPet {
-    public static void main(String[] args) {
-        VirtualPet pet = new VirtualPet("name");
-        pet.feed();
-        pet.play();
+//     }
+// package virtual_pet;
 
-    }
->>>>>>> 68c72fd7880dee0ae684ad89fe40e300d2ae9c69
-}
->>>>>>> fb4b5bf6d920d2dd5adb92a5e25998213a25d94e:main/java/virtual_pet/VirtualPet.java
+// public class VirtualPet {
+//     public static void main(String[] args) {
+//         VirtualPet pet = new VirtualPet("name");
+//         pet.feed();
+//         pet.play();
+
+//     }
+// }
