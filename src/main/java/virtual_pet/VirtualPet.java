@@ -101,6 +101,7 @@ public class VirtualPetApplication {
     }
 }
 =======
+<<<<<<< HEAD
 package virtual_pet;
 
 public class VirtualPet {
@@ -110,5 +111,16 @@ public class VirtualPet {
         pet.play();
 
     }
+=======
+package virtual_pet;
+
+public class VirtualPet {
+    public static void main(String[] args) {
+        VirtualPet pet = new VirtualPet("name");
+        pet.feed();
+        pet.play();
+
+    }
+>>>>>>> 68c72fd7880dee0ae684ad89fe40e300d2ae9c69
 }
 >>>>>>> fb4b5bf6d920d2dd5adb92a5e25998213a25d94e:main/java/virtual_pet/VirtualPet.java

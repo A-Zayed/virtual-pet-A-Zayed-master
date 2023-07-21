@@ -9,7 +9,7 @@ public class VirtualPetApplication {
     private int happiness;
     private int energy;
 
-    public VirtualPet(String name) {
+    public VirtualPetApplication(String name) {
         this.name = name;
         hunger = 0;
         happiness = 0;
@@ -54,6 +54,18 @@ public class VirtualPetApplication {
         hunger += random.nextInt(10) + 1;
         happiness -= random.nextInt(5) + 1;
         energy -= random.nextInt(5) + 1;
+
+        if (hunger > 100) {
+            hunger = 100;
+        }
+
+        if (happiness < 0) {
+            happiness = 0;
+        }
+
+        if (energy < 0) {
+            energy = 0;
+        }
     }
 
     public void checkStatus() {
@@ -64,9 +76,38 @@ public class VirtualPetApplication {
     }
 
     public static void main(String[] args) {
-        VirtualPet pet = new VirtualPet("name");
-        pet.feed();
-        pet.play();
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.println("Welcome to Virtual Pet!");
+        System.out.print("Enter a name for your pet: ");
+        String petName = scanner.nextLine();
+
+        VirtualPetApplication virtualPet = new VirtualPetApplication(petName);
+
+        System.out.println("Commands: feed, play, sleep, status, quit");
+
+        String command;
+        do {
+            virtualPet.tick();
+
+            System.out.print("\nEnter a command: ");
+            command = scanner.nextLine();
+
+            if (command.equals("feed")) {
+                virtualPet.feed();
+            } else if (command.equals("play")) {
+                virtualPet.play();
+            } else if (command.equals("sleep")) {
+                virtualPet.sleep();
+            } else if (command.equals("status")) {
+                virtualPet.checkStatus();
+            } else if (command.equals("quit")) {
+                System.out.println("Goodbye!");
+            } else {
+                System.out.println("Invalid command. Try again.");
+            }
+        } while (!command.equals("quit"));
+
+        scanner.close();
     }
 }
